@@ -29,28 +29,25 @@
 
 <h2>Information the app accesses</h2>
 
-<p><strong>Location.</strong> When you use the "Check Nearby" or restaurant search features, the app asks for your device's location (foreground only — we never request or use "Always" background location access). Your location is used to:</p>
-<ul>
-  <li>Find restaurants near you</li>
-  <li>Filter and sort search results by distance</li>
-</ul>
-<p>Your location is sent to Google's Places API as part of these requests (see "Third-party services" below). We do not store your location on any server we control, and we do not track your location history — each request uses your current position at the time you tap "Check Nearby" or search.</p>
-<p>You can deny or revoke location access at any time in your device's Settings. The app will still work without it, except that nearby/distance-based features won't be available.</p>
+<p><strong>Location.</strong> When you search for a restaurant, the app asks for your device's location (foreground only — we never request or use "Always" background location access) to help rank search results by proximity. This location is sent to Apple's Maps Server API as part of the search request (see "Third-party services" below). We do not store your location on any server we control, and we do not track your location history. The "Nearby" button does not use your location through the app at all — it simply opens your device's Maps app directly.</p>
+<p>You can deny or revoke location access at any time in your device's Settings. The app will still work without it, except that proximity-based search ranking won't be available.</p>
 
-<p><strong>Restaurant data you create.</strong> The app lets you save restaurants (name, address, rating, your personal star rating, visit history, and notes on what you ordered). This data is stored <strong>only on your device</strong>, using local app storage. We do not upload it to any server, and we do not have access to it. If you delete the app, this data is permanently deleted along with it — there is currently no cloud backup or account system.</p>
+<p><strong>Restaurant data you create.</strong> The app lets you save restaurants (name, address, your personal star rating, visit history, and notes on what you ordered). This data is stored <strong>only on your device</strong>, using local app storage. We do not upload it to any server, and we do not have access to it. If you delete the app, this data is permanently deleted along with it — there is currently no cloud backup or account system.</p>
 
-<p><strong>Search queries.</strong> When you type a restaurant name to search, that text is sent to Google's Places API to retrieve matching results. We do not store your search history ourselves.</p>
+<p><strong>Search queries.</strong> When you type a restaurant name to search, that text (and, if available, your location as a proximity hint) is sent to Apple's Maps Server API to retrieve matching results. We do not store your search history ourselves.</p>
 
 <h2>Third-party services</h2>
 
-<p>The app uses the <strong>Google Places API</strong> to search for restaurants, show ratings/photos/addresses, and link to Google Maps. When you use search or nearby features, your query text and/or location coordinates are sent to Google. This is subject to <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and <a href="https://cloud.google.com/maps-platform/terms">Google Maps Platform's terms</a>. We do not control how Google processes this data beyond what their policies describe.</p>
+<p>The app uses the <strong>Apple Maps Server API</strong> to search for restaurants and show basic details (name, address). We operate a small server-side component whose only job is authenticating with this API on the app's behalf — it does not receive or store your location, search terms, or restaurant data; those go directly from your device to Apple. This is subject to <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+
+<p>Depending on your settings, tapping a restaurant's name opens either a <strong>Google Maps</strong> search or a <strong>Yelp</strong> search for more details, and tapping the map icon opens either <strong>Apple Maps</strong> or <strong>Google Maps</strong> for directions. These simply open a link in the app you chose — only the restaurant's name and address are included in that link. Use of those apps is subject to their own privacy policies (<a href="https://policies.google.com/privacy">Google</a>, <a href="https://www.yelp.com/static?p=privacy">Yelp</a>).</p>
 
 <h2>What we don't do</h2>
 <ul>
   <li>We don't collect your name, email, or any account information — the app has no login or user accounts.</li>
   <li>We don't use analytics or advertising SDKs.</li>
   <li>We don't sell or share your data with third parties for marketing purposes.</li>
-  <li>We don't have a server or database of our own — all your saved data lives only on your device.</li>
+  <li>We don't operate any database of our own — all your saved data lives only on your device.</li>
 </ul>
 
 <h2>Children's privacy</h2>
